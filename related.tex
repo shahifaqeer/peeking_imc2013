@@ -1,0 +1,90 @@
+\section{Related Work}\label{sec:related}
+
+We briefly review related work on home broadband networks.  We survey
+work that has performed ``single shot'' measurements of home broadband
+network performance and characteristics, Internet policy reports on
+performance in various regions, and qualitative studies that lend
+insight into how to better design home networks.
+
+\fp {\bf Measuring home network performance.}  There has been
+significant interest in measuring home and access networks, and many
+previous studies have tried to measure home networks in various
+ways. The studies use various methods for measuring home networks,
+from running measurements remotely from servers in the Internet to
+measure access link properties~\cite{Dischinger:imc2007} to running
+tools on end-host
+devices~\cite{DiCioccio:2012,DiCioccio2013,www-netalyzr,Kreibich2010,Sanchez2013,Chetty:2011:WMI}.
+In contrast to these previous studies, we perform our measurements from
+gateway routers, not end-host devices, which enables {\em continuous}
+monitoring rather than one-shot measurements.  Such continuous
+monitoring allows us to observe how usage patterns change over time,
+both on short and long timescales, as well as to report on other
+characteristics that require continuous monitoring, such as availability.
+Our work builds on our own previous work~\cite{sundaresan2011}, which
+uses a deployment of custom home access points that conduct a unique set
+of performance measurements.  In contrast to our previous work, this study
+broadly characterizes home network usage rather than focusing
+on access link performance.
+
+\fp {\bf National and regional Internet policy and measurement reports.}
+Recently, there has been interest from national agencies to measure home
+networks for Internet policy and regulation purposes.  The United States
+Federal Communications Commission, United Kingdom's Ofcom and the
+European Commission have all conducted large scale studies of access
+networks in conjunction with
+SamKnows~\cite{www-fcc-report,www-sk-eu,www-sk-uk}.  Benkler~\etal have
+a report on broadband transitions and policies around the
+world~\cite{RePEc:reg:wpaper:8}.  To date, these studies from regulatory
+commissions have focused exclusively on performance of the access
+network, rather than on properties of the home network itself or usage
+of the home network.  The primary objective of such initiatives is to
+gain an understanding of access networks to enact better policies.  They
+do not perform passive monitoring of the home network.
+
+\fp {\bf Qualitative design studies of home networks.}  There are
+previous studies on understanding home networks and attempts to design
+better
+systems~\cite{grinter2005work,grinter2009ins,keith2011advancing,Chetty:2007:SHL,poole2008more,calvert2007moving}.
+These previous studies are qualitative: they rely exclusively on human
+subject interviews and analysis on human interactions to identify
+problem areas and to suggest better designs.  We offer a {\em
+  quantitative} complement to these studies. We analyze passive
+measurement data that is automatically collected and reported, which are
+in turn used to derive meaningful observations about home networks that
+may not be obvious or even revealed through studies with human
+subjects.  The automated nature of our data collection and monitoring
+allows us to observe longitudinal behavior and usage patterns, and it may
+in some cases result in more accurate data about human activity and
+network usage, since many of the questions that previous studies have
+asked in interviews could be more completely and accurately addressed by
+measuring the network traffic itself.
+
+Previous studies have also built tools that improve interactivity and
+aid troubleshooting in a home network environment, for example
+measuring and displaying bandwidth usage and throughput in a home
+network~\cite{Chetty-2010,Chetty:2011:WMI}.  Our work analyzes data from
+{\em existing} networks, rather than trying to deploy new tools and
+observe how usage changes as a result of those tools.  We analyze a
+wider variety of network features, including wired vs. wireless usage,
+number of active devices, diurnal patterns, and availability.
+
+\fp {\bf Behavioral studies of Internet usage in \developing{} countries.}
+Chen \ea studied the effect of sporadic and slow connectivity on user
+behavior and found a better Web interaction model for such
+environments~\cite{Chen:2010:CWI}. Wyche \ea performed a qualitative
+study of how Kenyan Internet users adapt their usage behavior where
+Internet connectivity is a scarce resource in terms of availability,
+cost, and quality~\cite{Wyche:2010:DIC}.  Smyth \ea performed a
+qualitative study on sharing and consuming entertainment media on mobile
+phones in urban India~\cite{Smyth:2010:TTW}.  The data that we
+gathered in \developing{} countries could help
+corroborate some of these studies.
+
+
+
+%\fp{\bf Measuring home networks}~\cite{DiCioccio:2012,www-netalyzr,Kreibich2010,www-bismark,sundaresan2011,Dischinger:imc2007,Sanchez2013}\\
+%\fp{\bf Understanding home networks for better design}~\cite{calvert2007moving,grinter2005work,grinter2009ins,keith2011advancing}\\
+%\fp{\bf Help in interacting, troubleshooting}~\cite{poole2008more,grinter2005work,chetty2008getting,Chetty:2007:SHL}\\
+%\fp{\bf Passive measurements}~\cite{DiCioccio2013}\\
+%\fp{\bf Power management}~\cite{chetty2008getting,Chetty:2009:EGU}\\
+%\fp{\bf Speed and bandwidth}\\

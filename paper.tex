@@ -1,0 +1,108 @@
+\documentclass{sig-alternate-2013}
+\newfont{\mycrnotice}{ptmr8t at 7pt}
+\newfont{\myconfname}{ptmri8t at 7pt}
+\let\crnotice\mycrnotice%
+\let\confname\myconfname%
+
+\permission{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.}
+\conferenceinfo{IMC'13,}{October 23--25, 2013, Barcelona, Spain.}
+\copyrightetc{Copyright 2013 ACM \the\acmcopyr}
+\crdata{978-1-4503-1953-9/13/10\ ...\$15.00.\\
+http://dx.doi.org/10.1145/2504730.2504736 }
+\clubpenalty=10000 
+\widowpenalty = 10000
+
+\usepackage[format=plain,labelfont=bf,up,textfont=it,up,small]{caption}
+\usepackage{amsmath, amssymb,alltt}
+\usepackage{epsfig,url,tabularx,theorem,amsmath,amssymb,psfrag,graphics,times,subfig,multirow,color}
+\usepackage{cite}
+\usepackage{balance}
+
+\newcommand{\xxx}[1]{\textcolor{red}{#1}}
+\newcommand{\fp}{\vspace*{0.05in}\noindent}
+\newcommand{\eg}{{\em e.g.}} 
+\newcommand{\ie}{{\em i.e.}} 
+\newcommand{\etc}{{\em etc. }} 
+\newcommand{\ea}{{\em et al. }}
+\newcommand{\etal}{{\em et al.\ }}
+
+\renewcommand{\paragraph}[1]{\vspace*{0.1in}\noindent{\bf #1}}
+
+\newcommand{\supsym}[1]{\raisebox{4pt}{{\footnotesize #1}}}
+\newcommand{\gt}{\supsym{$\dag$}}
+\newcommand{\lip}{\supsym{$\ast$}}
+\newcommand{\nap}{\supsym{$\ddag$}}
+\newcommand{\sk}{\supsym{$\star$}}
+\newcommand{\name}{BISmark}
+%\newcommand{\active}{\name-Active}
+\newcommand{\passive}{\name-Passive}
+%\newcommand{\groupa}{{\em Group A}}
+%\newcommand{\groupb}{{\em Group B}}
+\newcommand{\developed}{developed}
+\newcommand{\developing}{developing}
+
+
+\renewenvironment{itemize}
+{\begin{list}{$\bullet$}{
+    \setlength{\labelsep}{4pt}
+    \setlength{\labelwidth}{3pt}
+    \setlength{\rightmargin}{0pt}
+    \setlength{\leftmargin}{0pt}
+    \addtolength{\leftmargin}{\labelwidth}
+    \addtolength{\leftmargin}{\labelsep}
+}}{\end{list}}
+
+\newtheorem{lesson}{Lesson}
+
+%\interfootnotelinepenalty 100000
+
+\newenvironment{pitem}{
+ \begin{itemize}
+ \setlength{\itemsep}{1pt}
+ \setlength{\parskip}{0pt}
+ \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\begin{document}
+\title{Peeking Behind the NAT: \\ An Empirical Study of Home Networks}
+\author{Sarthak Grover, Mi Seon Park, Srikanth Sundaresan, \\ Sam Burnett,
+  Hyojoon Kim, Nick Feamster \\ 
+\affaddr{School of Computer Science, Georgia Tech}}
+\maketitle
+
+%\appendix
+%\input{appendix}
+
+
+
+\begin{sloppypar}
+\input{abstract}
+
+% A category with the (minimum) three required fields
+\category{C.2.3}{Computer-Communication Networks}{Network Operations}[Network monitoring]
+%A category including the fourth, optional field follows...
+\terms{Measurement}
+\keywords{BISmark, Home Networks}
+
+\input{introduction}
+\input{related}
+\input{data}
+\input{availability}
+\input{infrastructure}
+\input{usage}
+\input{discussion}
+\input{conclusion}
+\input{acknowledgments}
+\end{sloppypar}
+
+\begin{small}
+\bibliographystyle{abbrv}
+%\balance\bibliography{ref}
+\balance\bibliography{new,ref,rfc}
+\label{lastpage}
+\end{small}
+
+
+
+\end{document}
+

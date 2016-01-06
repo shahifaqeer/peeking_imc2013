@@ -1,0 +1,141 @@
+\section{Introduction}
+
+Home broadband Internet access is ubiquitous and rapidly evolving. There
+are now upwards of one billion broadband Internet users
+worldwide~\cite{www-internet-stats}; much of that usage is shifting away
+from conventional desktops and towards mobile devices, such as laptops,
+smart phones, and tablets~\cite{www-itu}.  Despite their pervasiveness,
+little is known about most home networks or how people use them.
+
+Indeed, to date, it has been surprisingly difficult to study home networks on
+a large scale, because network technologies like network
+address translators (NATs) present only an opaque view of the home
+network to the global Internet---specifically, without a monitoring
+device {\em inside} the home, traffic coming from any device in a
+home network appears to all be coming from a single device.  This coarse
+granularity of visibility makes it impossible to observe the usage
+patterns of individual devices inside the home or observe
+characteristics about other parts of a home network (\eg, the home
+wireless network).  Observing home networks on a large scale requires
+developing---and deploying---an always-on monitoring device in the home
+that can capture information about individual devices, with the consent of
+the people that live in these homes.
+
+To better understand home networks, we developed \name{}, a custom home router, and
+deployed it in more than 100 home networks in 21 countries around the world for
+more than one year.  \name{} sits between the user's ISP access link and the
+rest of the home network and acts as a continuous monitoring device; as a
+result, it can observe all traffic entering and leaving the home network, and
+can attribute traffic flows to individual devices on the network.  This
+device, if permitted, can also log other types of activity, such as the number of devices on
+the network at any given time and the amount of traffic that any particular
+device sends to a destination (\eg, Google).  It can also independently measure
+the performance of both the home wireless network and the access link.
+%To better understand home networks, we developed a custom home router and
+%deployed it in more than 100 home networks in 21 countries around the world for
+%more than one year.  The router sits between the user's ISP access link and the
+%rest of the home network and acts as a continuous monitoring device; as a
+%result, it can observe all traffic entering and leaving the home network, and it
+%can also attribute traffic flows to individual devices on the network.  This
+%device, if permitted, can also log other types of activity, such as the number of devices on
+%the network at any given time and the amount of traffic that any particular
+%device sends to a destination (\eg, Google).  It can also independently measure
+%the performance of both the home wireless network and the access link.
+We study three aspects of home network usage:
+\begin{enumerate}
+\itemsep=-1pt
+\item {\em Availability.} How common are Internet connectivity outages in homes,
+    and how reasonable is it to assume continuous connectivity?
+\item {\em Infrastructure.} What networking technologies and devices do people use
+  in home networks?
+\item {\em Usage.} Is the capacity of a home network sufficient for the
+  growing demands of users and applications?  How does usage differ across
+  individual devices in the home?  What other patterns exist?
+\end{enumerate}
+\noindent
+%Each of these characteristics has important implications for ubiquitous
+%computing.
+\noindent
+Although our study instruments a relatively small number of home networks,
+it nevertheless offers extensive visibility into aspects of homes that were
+previously opaque to researchers.  Ultimately, regulators and Internet service
+providers may be able to use some of the techniques that we describe to
+perform similar studies on a larger scale.  We believe that researchers,
+ISPs, policymakers, and users can use the home router as a measurement
+device to better understand various trends in availability,
+infrastructure, and usage.  Data about availability can help regulators
+determine whether ISPs are delivering the service that they are
+promising to users.  Data about infrastructure (\eg, the amount of
+contention in the wireless spectrum) can help ISPs better understand and
+debug user performance, and can provide evidence for regulators
+to release more spectrum when it becomes appropriate to do so.
+Information about usage can help ISPs better provision and plan, and it
+can help device designers better understand how (and when) people use
+various devices.
+
+%shorten these three paragraphs?
+The {\em availability} of home broadband access networks lets developers
+of applications running over edge networks understand the connectivity
+conditions of a particular environment.  Our study has yielded some
+surprising findings. For example, although in the Western world we often
+think of broadband connectivity as ``always on'', we found examples in
+China and India where users only power up their home network gateway
+when they intend to use it.  We found that trends of availability
+held in general: only 10\% of home networks in the \developed{} world saw
+connectivity interruptions of more than ten minutes more frequently than
+once every 10 days, but about 50\% of home networks in \developing{}
+countries experienced such connectivity interruptions once every 3 days.
+Although it is difficult from our data set to ascertain the cause for
+this intermittent connectivity (\ie, it could result from power outages,
+poor connectivity, or behavioral patterns), it is clear that it is not
+safe to assume that Internet connectivity is highly available in certain
+parts of the world.
+
+The {\em infrastructure} of home broadband access networks lets us understand
+how users construct their home networks, and what types of devices they
+comprise.  We explore various questions relating to infrastructure, such as the
+number of devices on each home network, and how the number of devices on these
+networks varies over time with usage.  We find that in today's home network, there
+are more wireless devices than wired devices in
+general and this difference is greater in the \developing{} countries.  
+We also find households in more \developed{} countries tend to have more devices 
+compared to \developing{} countries, and
+those devices are more likely to remain continuously connected to the home router.
+Connectivity shows a diurnal pattern across a week;
+the number of devices on the network on
+weekdays typically peaks during evening hours, but on weekends device usage is
+more consistent throughout the day.  The median
+number of devices on a 2.4~GHz network is about five, whereas on the 5 GHz band,
+the median number of devices is two.
+  
+
+The {\em usage} of home broadband Internet access can shed light on the
+applications and devices that people tend to use on their home network, and the
+overall utilization of these networks. We analyze 
+the periodicity of usage patterns in various home networks and observe the extent
+to which users saturate their access link and find that most home networks are
+lightly used, and do not saturate their downstream or upstream link most of the
+time.  We analyze distributions of device usage and find that users normally
+have a subset of devices that they prefer to use for consuming most network
+data. %mostly one device hogs all the bandwidth
+We observe the diversity of domains visited and find that about 38\% of the
+total volume of traffic is from a single most popular domain, among 200
+whitelisted domains.
+
+The rest of the paper is organized as follows.
+Section~\ref{sec:related} overviews related work.
+Section~\ref{sec:data} describes the process of collecting the various
+types of data that we use in our study.  Section~\ref{sec:availability}
+presents results concerning the availability of broadband access in
+various home networks around the world, including the duration of
+outages.  Section~\ref{sec:infrastructure} describes the characteristics
+of the infrastructure in various home networks, including the number of
+devices that are in the network, whether the devices are connected
+via wired or wireless, and to what extent devices occupy different
+ranges of radio spectrum (\eg, 2.4 GHz and 5 GHz).
+Section~\ref{sec:usage} profiles the usage patterns of users in
+different home wireless broadband networks and explores how usage
+patterns differ across devices, and how download speed affects usage
+patterns.  Section~\ref{sec:discussion} describes ongoing work and
+extensions to this study and discusses some broader implications of our
+results.  Section~\ref{sec:conclusion} concludes.
